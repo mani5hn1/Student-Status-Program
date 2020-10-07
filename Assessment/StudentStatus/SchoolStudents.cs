@@ -5,20 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assessment
+namespace StudentStatusProg
 {
-    class QA
+    class SchoolStudents
     {
         private List<Student> students;
 
-        public QA()
+        public SchoolStudents()
         {
             students = new List<Student>();
             string line;
 
             // Read the file and display it line by line.  
             System.IO.StreamReader file =
-            new System.IO.StreamReader(@"C:\Users\Manish\Documents\Manish Apprenticeship\QA\Blocks QA\QA C#\Block 2\Students.txt");
+            new System.IO.StreamReader(@"C:\Users\Manish\Documents\Students.txt");
             while ((line = file.ReadLine()) != null)
             {
               string [] split =  line.Split(',');
@@ -35,8 +35,6 @@ namespace Assessment
             AddStudent(manstu);
             AddStudent(manstuNext);
         }
-        
-
             public List<Student> GetStudents()
             {
                 return students;

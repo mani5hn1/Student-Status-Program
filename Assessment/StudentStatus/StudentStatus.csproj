@@ -46,7 +46,7 @@
     <Compile Include="ManagementStudent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QA.cs" />
+    <Compile Include="SchoolStudents.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assessment
+namespace StudentStatusProg
 {
     public enum StudentStatus { None, Enrolled, InTraining, CompletedTraining };
     class Program
     {
-        string path = System.IO.File.ReadAllText(@"C:\Users\Manish\Documents\Manish Apprenticeship\QA\Blocks QA\QA C#\Block 2\Students.txt");
+        string path = System.IO.File.ReadAllText(@"C:\Users\Manish\Documents\Students.txt");
         
         static void Main(string[] args)
         {
             Student stu = new Student();                      
 
-            QA qA = new QA();
+            SchoolStudents sch = new SchoolStudents();
 
-            foreach (var student in qA.GetStudents())
+            foreach (var student in sch.GetStudents())
             {
                 Console.WriteLine(student);
 
@@ -27,7 +27,7 @@ namespace Assessment
                 }
             }
             Console.WriteLine();
-            var Completed = qA.GetStudents().Where(n=>n.Status == ((StudentStatus)3));
+            var Completed = sch.GetStudents().Where(n=>n.Status == ((StudentStatus)3));
             foreach (var item in Completed.ToList())
             {
                
@@ -36,7 +36,7 @@ namespace Assessment
 
             //using interface enrol 
             Console.WriteLine();
-            var inter = qA.GetStudents().Where(n => n.Status == 0);
+            var inter = sch.GetStudents().Where(n => n.Status == 0);
             foreach (var item in inter.ToList())
             {
                 item.Enrol();
@@ -44,7 +44,7 @@ namespace Assessment
             }
 
             Console.WriteLine();
-            var Enrolled = qA.GetStudents().Where(n => n.Status == (StudentStatus.Enrolled));
+            var Enrolled = sch.GetStudents().Where(n => n.Status == (StudentStatus.Enrolled));
             foreach (var item in Enrolled.ToList())
             {
 
